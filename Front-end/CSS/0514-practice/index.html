@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .box {
+            width: 1rem;
+            height: 1rem;
+            background: #333;
+            transform: scale(1);
+            transition: transform 0.2s ease-in;
+        }
+
+        .box:hover {
+            transform: scale(1.5);
+        }
+
+        .boxA {
+            width: 3rem;
+            height: 3rem;
+            background: #333;
+            animation: boxA 2s infinite ease-in-out;
+        }
+
+        @keyframes boxA {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="boxA"></div>
+</body>
+</html>
