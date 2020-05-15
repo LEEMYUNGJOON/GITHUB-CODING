@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+$blue: #56baed;
+$black: #0d0d0d;
+$grey: #cccccc;
+
+* {
+  padding:0;
+  margin:0;
+}
+*:focus {
+    outline: none;
+} 
+
+body{
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+#bg {
+  background:$blue;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  clip-path: polygon(0 0, 55% 0, 45% 100%, 0% 100%);        
+}
+.underlineHover:after {
+  display: block;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: $blue;
+  content: "";
+  transition: width 0.33s ease-in-out;
+}
+.underlineHover:hover {
+  color: $black;
+}
+.underlineHover:hover:after{
+  width: 100%;
+}
+.wrapper{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  text-align:center;
+  justify-content: center;
+  border-radius: 10px 10px 10px 10px;
+  min-height:100%;
+  #form{
+    max-width: 350px;
+    position: relative;
+    box-shadow: 2px 2px 3px darken($grey, 10%);
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    position:relative;
+
+    #formHeader{
+      h2 {
+        text-align: center;
+        font-size:15px;
+        font-weight:400px;
+        text-transform:uppercase;
+        color:$grey;
+        display:inline-block;
+        margin: 20px 10px 20px 10px;
+      }
+      h2.inactive {
+        color: $grey;
+      }
+      h2.active {
+        color: $black;
+        border-bottom: 2px solid $blue;
+      }
+       i {
+        font-size:4.5em;
+        margin:0px;
+        color:darken($blue, 10%);
+        text-shadow:0px 2px 3px darken($blue, 10%);
+      }
+    }
+
+    #formContent{
+      padding: 20px 20px;
+      position: relative;
+      form input[type=submit]{
+        display:inline-block;
+        background-color: $blue;
+        border: none;
+        color: white;
+        padding: 15px 70px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px 0px darken(#39ace7, 20%);
+        font-size: 13px;
+        margin-top:5px;
+      }
+      form input[type=text]{
+        background-color: #f6f6f6;
+        border: 2px solid #f6f6f6;
+        transition: all 0.5s ease-in-out;
+        padding: 15px 3px;
+        width:90%;
+        margin:5px;
+        border-radius:5px;
+        text-align:center;
+        background-color: #f6f6f6;
+        font-size: 16px;
+        display:inline-block;
+      }
+      form input[type=submit]:hover{
+        background-color: #39ace7;
+        border:none;
+      }
+      
+      input[type=text]:focus {
+        background-color: #fff;
+        border:none;
+        border-bottom: 2px solid $blue;
+      }
+      input[type=text]:placeholder {
+        color: $grey;
+      }
+    }
+
+    #formFooter{
+      padding: 10px 20px;
+      background-color: #f6f6f6;
+      border-top: 1px solid darken(#f6f6f6, 5%);
+      border-radius:0px 0px 10px 10px;
+      a{
+        color:darken($blue, 35%);
+        padding: 10px 25px;
+        font-size:1em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size:16px;
+      }
+    }
+  }
+}
